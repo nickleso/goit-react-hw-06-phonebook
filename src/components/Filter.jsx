@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { filterContacts } from 'redux/filterSlice';
+import { filterContacts } from '../redux';
 import css from './App.module.css';
 
 export const Filter = () => {
@@ -7,7 +7,6 @@ export const Filter = () => {
 
   function onFilterChange(event) {
     const name = event.currentTarget.value;
-    // trim
     dispatch(filterContacts(name));
   }
 

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from 'redux/contactsSlice';
-import { addContact } from 'redux/contactsSlice';
+import { getContacts, addContact } from '../redux';
+
 import css from './App.module.css';
 
 export const ContactForm = () => {
@@ -11,11 +11,11 @@ export const ContactForm = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.elements.name.value;
-    const normalizedFilter = name.toLowerCase();
+    const normalizedName = name.toLowerCase();
     const number = form.elements.number.value;
 
     const checkByName = contacts.find(
-      contact => contact.name.toLowerCase() === normalizedFilter
+      contact => contact.name.toLowerCase() === normalizedName
     );
 
     if (checkByName) {
