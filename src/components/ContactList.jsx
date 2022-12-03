@@ -4,25 +4,22 @@ import { Contacts } from './Contacts';
 import css from './App.module.css';
 
 export const ContactList = () => {
-  const contacts = useSelector(getContacts);
+  const { contactList } = useSelector(getContacts);
   const filter = useSelector(getFilter);
-  console.log(contacts);
-  console.log(filter);
 
   function getFiltredContacts() {
     if (!filter) {
-      return contacts;
+      return contactList;
     }
 
     const normalizedFilter = filter.toLowerCase();
 
-    return contacts.filter(contact =>
+    return contactList.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
   }
 
   const visibleContacts = getFiltredContacts();
-  console.log(visibleContacts);
 
   return (
     <ul className={css.contact__list}>

@@ -5,7 +5,7 @@ import css from './App.module.css';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const { contactList } = useSelector(getContacts);
 
   function onFormSubmit(event) {
     event.preventDefault();
@@ -14,7 +14,7 @@ export const ContactForm = () => {
     const normalizedName = name.toLowerCase();
     const number = form.elements.number.value;
 
-    const checkByName = contacts.find(
+    const checkByName = contactList.find(
       contact => contact.name.toLowerCase() === normalizedName
     );
 
