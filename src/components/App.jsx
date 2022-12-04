@@ -4,15 +4,6 @@ import { Filter } from './Filter';
 import css from './App.module.css';
 
 export default function App() {
-  // const [contacts, setContacts] = useState(() => {
-  //   return JSON.parse(localStorage.getItem('myContacts')) ?? [];
-  // });
-  // const [filter, setFilter] = useState('');
-
-  // useEffect(() => {
-  //   localStorage.setItem('myContacts', JSON.stringify(contacts));
-  // }, [contacts]);
-
   return (
     <main className={css.phonebook}>
       <section className={css.phonebook__wrap}>

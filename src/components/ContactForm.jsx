@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts, addContact } from '../redux';
+import { nanoid } from 'nanoid';
 
 import css from './App.module.css';
 
@@ -23,7 +24,13 @@ export const ContactForm = () => {
       return;
     }
 
-    dispatch(addContact(name, number));
+    const newContact = {
+      id: nanoid(10),
+      name,
+      number,
+    };
+
+    dispatch(addContact(newContact));
     form.reset();
   }
 
